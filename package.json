@@ -1,0 +1,33 @@
+{
+  "name": "sudoku-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "ajv": "^6.4.0",
+    "babel-preset-stage-1": "^6.24.1",
+    "prop-types": "^15.6.1",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^3.0.5",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "sudoku-umd": "^1.0.1",
+    "uuid": "^3.2.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015-webpack": "^6.4.3",
+    "babel-preset-react": "^6.24.1"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}

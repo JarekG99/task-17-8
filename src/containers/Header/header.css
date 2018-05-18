@@ -1,0 +1,36 @@
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #555;
+  min-height: 25vh;
+  padding: ;
+  color: white;
+}
+
+.App-title {
+  margin-top: 3px;
+}
+
+.newgame {
+  margin-bottom: 8px;
+}
+.gamelevel {
+  visibility: inherit;
+}
+
+.header-middle, .header-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #555;
+  height: 15vh;
+  padding: 20px;
+  color: white;
+}

@@ -1,0 +1,50 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.App-main {
+  margin: 0 auto;
+  font-size: 1.5em;
+  height: 60vh;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  max-width: 32vw;
+
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.tile {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: flex-start;
+  height: 3vw;
+  width: 3vw;
+  border: 1px solid grey;
+  background-color: #cfcfcf;
+}
+.special-yellow {
+  background-color: yellow;
+}
+
+.red {
+  color: red;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
