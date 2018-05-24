@@ -5,7 +5,7 @@ import { newGame, resetGame, checkGame, showSolution } from '../../actions';
 
 import  './header.css';
 
-const Header = (props)  => {
+const Header = (props)  => { console.log('header props', props);
 
     return (
       <header className="App-header">
@@ -49,6 +49,10 @@ const Header = (props)  => {
     // bindActionCreators(Actions, dispatch)
   }
 
+  const mapStateToProps = (state) => {
+    return state;
+  }
 
- export default connect(null, mapDispatchToProps)(Header);
+ // export default connect(null, mapDispatchToProps)(Header);
+ export default connect(mapStateToProps, mapDispatchToProps)(Header);
  // export default Header;

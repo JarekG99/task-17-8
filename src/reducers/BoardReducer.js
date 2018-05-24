@@ -12,7 +12,7 @@ const replaceAt = (index, value) => {
   return (this.substr(0, index) + value + this.substr(index));
 }
 
-const BoardReducer = (state=initialState, action) => {
+const BoardReducer = (state=initialState, action) => { console.log('action', action);
 
   switch (action.type) {
 

@@ -13,7 +13,7 @@ export class ShowBoardPage extends React.Component {
     }
 
  store.subscribe(() => {
-   console.log(store.getState())
+   // console.log(store.getState())
    this.setState({
      board: store.getState().BoardReducer.board,
    })
