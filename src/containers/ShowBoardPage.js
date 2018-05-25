@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { store } from '../index';
-import Board from '../components/board'
+import Board from '../components/board';
+import { nextStep } from '../actions';
 
 export class ShowBoardPage extends React.Component {
   constructor(props) {
@@ -22,12 +23,26 @@ export class ShowBoardPage extends React.Component {
 console.log(store.getState())
 }
   handleClick = (event) => {
-    const { number, key } = event.target;
+    const { number, id } = event.target;
     this.setState({
-      [number]: number,
-      [key]: key,
+      number: number,
+      id: id,
+      style: {
+         backgroundColor: '#FFF'}
+
     });
   };
+
+  checkEnter = (e) => {
+    if (e.key === 'Enter') {
+      this.finishEdit(e);
+    }
+  }
+
+  finishEdit = (e) => {
+    const value = e.target.value;
+
+  }
 
   handleValue = (item) => {
     this.state.board.map(function(item,index){Board[index].value = (
@@ -52,6 +67,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+  onfinishEdit: (value, id) => dispatch(nextStep(value, id)),  
   ShowBoardPage,
   }
  }

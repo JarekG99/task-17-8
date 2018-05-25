@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: flex-start;
   flex-flow: row wrap;
-  max-width: 32vw;
+  max-width: 34vw;
 
 }
 .row {
@@ -29,12 +29,18 @@
 }
 .tile {
   display: flex;
-  flex-direction: row wrap;
-  justify-content: flex-start;
+  flex-direction: row nowrap;
+  justify-content: center;
   height: 3vw;
   width: 3vw;
   border: 1px solid grey;
   background-color: #cfcfcf;
+  margin: 0.5px;
+  font-size: 2vw;
+  padding: 0.15vw;
+  text-align: end;
+  color:
+
 }
 .special-yellow {
   background-color: yellow;

@@ -3,6 +3,7 @@ import { NEW_GAME, RESET_GAME, CHECK_GAME, NEXT_STEP, SHOW_SOLUTION,
 import sudoku from 'sudoku-umd';
 
 
+
 const initialState = {
  initialBoard: '',
  board: [],
@@ -27,18 +28,19 @@ const BoardReducer = (state=initialState, action) => { console.log('action', act
           return Object.assign({}, state, {board: replaceAt(action.key, action.value).split('')});
 
     case SHOW_CANDIDATES:
-          const candidatesTile = sudoku.get_candidates(initialState.board).charAt(action.key);
+          const candidatesTile = sudoku.get_candidates(state.initialBoard).charAt(action.key);
+          console.log(candidatesTile);
           return Object.assign({}, state, {board: replaceAt(action.key, candidatesTile).split('')});
 
     case CHECK_GAME:
-        const solutionBoard = sudoku.solve(initialState.initialBoard);
-        if(solutionBoard.charAt(action.key !== initialState.board.charAt(action.key))) {
+        const solutionBoard = sudoku.solve(state.initialBoard);
+        if(solutionBoard.charAt(action.key) !== state.board.join('').charAt(action.key)) {
           alert('Your proposal is wrong!')
         } else alert('Your proposal is right!');
-        break;
+        return state;
 
     case SHOW_SOLUTION:
-       return Object.assign({}, state, {board: sudoku.solve(state.initialBoard).split('')});
+       return Object.assign({}, state, {board: (sudoku.solve(state.initialBoard)).split('')});
 
     default:
       return state;

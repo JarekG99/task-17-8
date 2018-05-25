@@ -1,7 +1,7 @@
 import React from 'react';
 import  ShowBoardPage  from './containers/ShowBoardPage';
 import  Header  from './containers/Header/header';
-import { Footer } from './containers/Footer/footer';
+import  Footer  from './containers/Footer/footer';
 import './App.css';
 // import { store } from './index';
 class App extends React.Component {

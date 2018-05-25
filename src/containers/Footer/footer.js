@@ -1,21 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { showCandidates } from '../../actions';
+
 import  './footer.css';
 
 
-export class Footer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-    // this.onShowCandidates=this.onShowCandidates.bind(this);
-  }
+const Footer = (props)  => { console.log('footer props', props);
 
-  render() {
     return (
       <footer className='App-footer'>
         <div className='footer-top'>
-        <button className='btn'>Undo</button>
+        {/* <button className='btn' onClick={onUndo} disabled={!canUndo}>Undo</button> */}
         <button className='btn' onClick={this.onShow_Candidates}>Show candidates</button>
-        <button className='btn'>Redo</button>
+        {/* <button className='btn' onClick={onRedo} disabled={!canRedo}>Redo</button> */}
         </div>
         <div className='footer-bottom'>
         <button className='btn number'>0</button>
@@ -32,4 +29,24 @@ export class Footer extends React.Component {
       </footer>
     );
   }
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // onUndo: () => dispatch(UndoActionCreators.undo()),
+    // onRedo: () => dispatch(UndoActionCreators.redo()),
+    onShow_Candidates: () =>  {dispatch(showCandidates())}
+
+  }
+
 }
+
+const mapStateToProps = (state) => {
+  return {
+  state,
+  // canUndo: state.todos.past.length > 0,
+  // canRedo: state.todos.future.length > 0
+}
+}
+// export default connect(null, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);

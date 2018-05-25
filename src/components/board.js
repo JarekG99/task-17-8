@@ -20,9 +20,11 @@ console.log('props board', props);
      //  board.push(<Tile
      //   id={i}
      // />)
-     board.push(store.getState().BoardReducer.initialBoard[i] || '');
+     board.push(store.getState().BoardReducer.board[i] || '');
     }
 console.log('board Arr', board);
+
+
      return (
        <div className='board'>{board.map(number =>
          <Tile
@@ -31,6 +33,7 @@ console.log('board Arr', board);
            number={number}
            onClick={props.handleClick}
            value={props.handleValue}
+           onKeyPress={this.checkEnter}
          />
        )}
        </div>
@@ -42,14 +45,7 @@ console.log('board Arr', board);
 
     };
 
-//export default connect(mapStateToProps, mapDispatchToProps)(Board)
-  // export default Board;
 
-  // const mapStateToProps = state => {
-  //   return {
-  //     board: Board
-  //   }
-  // }
 
   const mapStateToProps = (state) => {
     return state;

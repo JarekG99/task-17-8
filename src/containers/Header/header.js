@@ -7,6 +7,7 @@ import  './header.css';
 
 const Header = (props)  => { console.log('header props', props);
 
+
     return (
       <header className="App-header">
           <div className='header-left'>
@@ -40,13 +41,13 @@ const Header = (props)  => { console.log('header props', props);
       onEasyClick: () =>  {dispatch({type: 'NEW_GAME', level: 'easy'})},
       onMediumClick: () =>  {dispatch(newGame('medium'))},
       onHardClick: () =>  {dispatch({type: 'NEW_GAME', level: 'hard'})},
-      onVeryHardClick: () =>  {dispatch(newGame('very_hard'))},
+      onVeryHardClick: () =>  {dispatch(newGame('very-hard'))},
       onReset: () =>  {dispatch(resetGame())},
       onCheck: () =>  {dispatch(checkGame())},
       onSolve: () =>  {dispatch(showSolution())}
 
     }
-    // bindActionCreators(Actions, dispatch)
+  
   }
 
   const mapStateToProps = (state) => {
