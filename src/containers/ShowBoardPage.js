@@ -10,7 +10,6 @@ export class ShowBoardPage extends React.Component {
     this.state = {
       initialBoard: '',
       board: [],
-      colorFilter: 'RED',
     }
 
  store.subscribe(() => {
@@ -23,15 +22,11 @@ export class ShowBoardPage extends React.Component {
 console.log(store.getState())
 }
   handleClick = (event) => {
-    const { number, id } = event.target;
-    this.setState({
-      number: number,
-      id: id,
-      style: {
-         backgroundColor: '#FFF'}
-
-    });
-  };
+    const  id  = event.target.id;
+    console.log(id);
+      // style= {
+      //    backgroundColor: ['#FFF']}
+    };
 
   checkEnter = (e) => {
     if (e.key === 'Enter') {
@@ -40,8 +35,8 @@ console.log(store.getState())
   }
 
   finishEdit = (e) => {
-    const value = e.target.value;
-
+    let value = e.target.value;
+    let id = e.target.id;
   }
 
   handleValue = (item) => {
@@ -67,7 +62,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-  onfinishEdit: (value, id) => dispatch(nextStep(value, id)),  
+  onfinishEdit: (value, id) => dispatch(nextStep(value, id)),
   ShowBoardPage,
   }
  }

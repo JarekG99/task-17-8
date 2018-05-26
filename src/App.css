@@ -29,8 +29,9 @@
 }
 .tile {
   display: flex;
-  flex-direction: row nowrap;
+  flex-direction: row wrap;
   justify-content: center;
+  align-items: center;
   height: 3vw;
   width: 3vw;
   border: 1px solid grey;
@@ -38,11 +39,12 @@
   margin: 0.5px;
   font-size: 2vw;
   padding: 0.15vw;
-  text-align: end;
-  color:
-
+  text-align: center;
 }
-.special-yellow {
+input:disabled {
+  color: red;
+}
+input:active {
   background-color: yellow;
 }
 

@@ -11,7 +11,7 @@ const Footer = (props)  => { console.log('footer props', props);
       <footer className='App-footer'>
         <div className='footer-top'>
         {/* <button className='btn' onClick={onUndo} disabled={!canUndo}>Undo</button> */}
-        <button className='btn' onClick={this.onShow_Candidates}>Show candidates</button>
+        <button className='btn' onClick={props.onShow_Candidates}>Show candidates</button>
         {/* <button className='btn' onClick={onRedo} disabled={!canRedo}>Redo</button> */}
         </div>
         <div className='footer-bottom'>

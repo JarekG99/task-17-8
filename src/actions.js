@@ -18,8 +18,10 @@ export const resetGame = () => ({
         type: 'RESET_GAME'
 })
 
-export const checkGame = (key) => ({
-        type: 'CHECK_GAME'
+export const checkGame = (value,key) => ({
+        type: 'CHECK_GAME',
+        value,
+        key,
 })
 
 export const nextStep = (value, key) => ({
@@ -32,9 +34,9 @@ export const showSolution = () => ({
         type: 'SHOW_SOLUTION'
 })
 
-export const showCandidates = (key) => ({
+export const showCandidates = () => ({
         type: 'SHOW_CANDIDATES',
-        key,
+
 })
 
 export const chooseNumber = () => ({
