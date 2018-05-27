@@ -7,7 +7,7 @@ import { nextStep, checkGame } from '../actions';
 
 
 const Tile = ({onChange, number, id, locked, onfinishEdit, onhandleChange}) => {
- // console.log('number', number);
+
 
 this.handleChange = (event) => {
   const value = event.target.value

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { store } from '../index';
 import Board from '../components/board';
-import { nextStep } from '../actions';
+// import { nextStep } from '../actions';
 
 export class ShowBoardPage extends React.Component {
   constructor(props) {
@@ -13,7 +13,6 @@ export class ShowBoardPage extends React.Component {
     }
 
  store.subscribe(() => {
-   // console.log(store.getState())
    this.setState({
      board: store.getState().BoardReducer.board,
    })
@@ -23,9 +22,6 @@ console.log(store.getState())
 }
   handleClick = (event) => {
     const  id  = event.target.id;
-    console.log(id);
-      // style= {
-      //    backgroundColor: ['#FFF']}
     };
 
   checkEnter = (e) => {
@@ -34,14 +30,14 @@ console.log(store.getState())
     }
   }
 
-  finishEdit = (e) => {
-    let value = e.target.value;
-    let id = e.target.id;
-  }
+  // finishEdit = (e) => {
+  //   let value = e.target.value;
+  //   let id = e.target.id;
+  // }
 
   handleValue = (item) => {
     this.state.board.map(function(item,index){Board[index].value = (
-    (item === '.' || item === undefined) ? '' : store.board[item])}
+    (item === '.' || item === undefined) ? '' : store.present.board[item])}
     )
   };
 
@@ -62,7 +58,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-  onfinishEdit: (value, id) => dispatch(nextStep(value, id)),
+  // onfinishEdit: (value, id) => dispatch(nextStep(value, id)),
   ShowBoardPage,
   }
  }

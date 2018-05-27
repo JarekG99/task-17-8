@@ -16,7 +16,8 @@ const Header = (props)  => { console.log('header props', props);
         <div className='header-middle'>
           <h1 className="App-title">Sudoku</h1>
           <div>
-            <button className='btn newgame' onClick={()=>alert('Choose the level by clicking the button, pls!')}>New game</button>
+            <button className='btn newgame' onClick={()=>
+              alert('The game rules are simple:\n   1.choose the level by clicking the button below. \n   2.feel the empty tiles with single number (1-9).\n\n Follow the game rules:\n   a.one digit can apear only once in the column and row the tile belongs too.\n   b.The same rule - single number can apear once in the block the tiles belongs too (square 3x3).\n\n Feel free to use all buttons provided.\n If all numbers disapear your path was wrong.\n Try to get back by "undo" or "reset" buttons.\n Or start the new game.\n\nGood luck!!!')}>The game rules & description.</button>
           </div>
           <div className='gamelevel'>
               <button className='btn' onClick={props.onEasyClick}>Easy</button>
@@ -47,7 +48,7 @@ const Header = (props)  => { console.log('header props', props);
       onSolve: () =>  {dispatch(showSolution())}
 
     }
-  
+
   }
 
   const mapStateToProps = (state) => {

@@ -24,7 +24,8 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-es2015-webpack": "^6.4.3",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "redux-undo": "^0.6.1"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",

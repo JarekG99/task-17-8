@@ -1,7 +1,7 @@
 import { NEW_GAME, RESET_GAME, CHECK_GAME, NEXT_STEP, SHOW_SOLUTION,
-  SHOW_CANDIDATES} from '../actions';
+  SHOW_CANDIDATES, CHOOSE_NUMBER } from '../actions';
 import sudoku from 'sudoku-umd';
-
+import undoable, { distinctState } from 'redux-undo';
 
 
 const initialState = {
@@ -10,7 +10,6 @@ const initialState = {
 }
 
 const replaceAt = (state, index, value) => { console.log('index, value', index, value);
-  // return (this.substr(0, index) + value + this.substr(index));
   state.board[index] = value;
   return state.board;
 }
@@ -30,8 +29,8 @@ const BoardReducer = (state=initialState, action) => { console.log('action', act
           return Object.assign({}, state, {board: replaceAt(state, action.key, action.value)});
 
     case SHOW_CANDIDATES:
-          const candidatesTile = sudoku.get_candidates(state.initialBoard).toString().split(',');
-          console.log(candidatesTile);
+          const candidatesTile = sudoku.get_candidates(state.board).toString().split(',');
+          // console.log(candidatesTile);
           return Object.assign({}, state, {board: candidatesTile});
 
     case CHECK_GAME: {
@@ -39,23 +38,28 @@ const BoardReducer = (state=initialState, action) => { console.log('action', act
         let i=0;
         solutionBoard.map(function(item,index){solutionBoard[index] === state.board[index] ?
         i : (state.board[index]==='.' ? i : i++)});
-        // if(solutionBoard[action.key] !== state.board[action.key]) {
         if(i===0) {
-          alert('Your proposal is right! Go ahead!');
+          alert('Your proposal is right! Go ahead! ');
         } else { alert('Your proposal is wrong! You have ' +  i + ' mistake(s)');
       }
-       // console.log('i', i, solutionBoard);
      }
         return state;
 
     case SHOW_SOLUTION:
        return Object.assign({}, state, {board: (sudoku.solve(state.initialBoard)).split('')});
 
+    case CHOOSE_NUMBER:
+
+        // return Object.assign({}, state, {board: replaceAt(state, action.key, action.value)});
+          return state;
+          
     default:
       return state;
   }
 };
 
-console.log(BoardReducer.board);
 
-export default BoardReducer;
+const undoableBoard = undoable(BoardReducer, {
+  filter: distinctState()
+})
+export default undoableBoard;

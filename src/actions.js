@@ -39,23 +39,6 @@ export const showCandidates = () => ({
 
 })
 
-export const chooseNumber = () => ({
+export const chooseNumber = (value) => ({
         type: 'CHOOSE_NUMBER'
 })
-export const ColorFilters =  {
-  RED: 'RED',
-  GREEN: 'GREEN',
-  BLACK: 'BLACK'
-}
-
-// export function undoStep() {
-//     return {
-//         type: UNDO_STEP
-//     }
-// }
-//
-// export function redoStep() {
-//     return {
-//         type: REDO_STEP
-//     }
-// }
