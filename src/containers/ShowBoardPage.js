@@ -10,7 +10,9 @@ export class ShowBoardPage extends React.Component {
     this.state = {
       initialBoard: '',
       board: [],
-    }
+      active: false,
+    };
+    
 
  store.subscribe(() => {
    this.setState({
@@ -58,7 +60,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-  // onfinishEdit: (value, id) => dispatch(nextStep(value, id)),
   ShowBoardPage,
   }
  }

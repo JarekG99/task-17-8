@@ -5,6 +5,19 @@ import { newGame, resetGame, checkGame, showSolution } from '../../actions';
 
 import  './header.css';
 
+const styles = {
+  green: {
+    color: 'green',
+    fontSize: '2.0vw',
+    borderRadius: '100px'
+  },
+  black: {
+    color: 'black',
+    fontSize: '1.7vw',
+    borderRadius: '10px'
+  },
+};
+
 const Header = (props)  => { console.log('header props', props);
 
 
@@ -16,8 +29,8 @@ const Header = (props)  => { console.log('header props', props);
         <div className='header-middle'>
           <h1 className="App-title">Sudoku</h1>
           <div>
-            <button className='btn newgame' onClick={()=>
-              alert('The game rules are simple:\n   1.choose the level by clicking the button below. \n   2.feel the empty tiles with single number (1-9).\n\n Follow the game rules:\n   a.one digit can apear only once in the column and row the tile belongs too.\n   b.The same rule - single number can apear once in the block the tiles belongs too (square 3x3).\n\n Feel free to use all buttons provided.\n If all numbers disapear your path was wrong.\n Try to get back by "undo" or "reset" buttons.\n Or start the new game.\n\nGood luck!!!')}>The game rules & description.</button>
+            <button className='btn newgame' style={styles.green} onClick={()=>
+              alert('The game rules are simple:\n   1.choose the level by clicking the button below. \n   2.feel the empty tiles with single number (1-9).\n\n Follow the game rules:\n   a.one digit can apear only once in the column and row the tile belongs too.\n   b.The same rule - single number can apear once in the block the tile belongs too (square 3x3).\n\n Feel free to use all buttons provided.\n If all numbers disapear your path was wrong.\n Try to get back by "undo" or "reset" buttons.\n Or start the new game.\n\nGood luck!!!')}>The game rules & description.</button>
           </div>
           <div className='gamelevel'>
               <button className='btn' onClick={props.onEasyClick}>Easy</button>
@@ -28,9 +41,9 @@ const Header = (props)  => { console.log('header props', props);
           </div>
         </div>
         <div className='header-right'>
-          <div><button className='btn controls' onClick={props.onReset}>Reset</button></div>
-          <div><button className='btn controls' onClick={props.onCheck}>Check</button></div>
-          <div><button className='btn controls' onClick={props.onSolve}>Solution</button></div>
+          <div><button className='btn controls' style={styles.black} onClick={props.onReset}>Reset</button></div>
+          <div><button className='btn controls' style={styles.black} onClick={props.onCheck}>Check</button></div>
+          <div><button className='btn controls' style={styles.black} onClick={props.onSolve}>Solution</button></div>
         </div>
       </header>
     );

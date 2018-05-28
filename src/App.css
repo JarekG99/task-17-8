@@ -21,6 +21,8 @@
   justify-content: flex-start;
   flex-flow: row wrap;
   max-width: 34vw;
+  border-left: 2px solid black;
+
 
 }
 .row {
@@ -31,8 +33,7 @@
   display: flex;
   flex-direction: row wrap;
   justify-content: center;
-/*   align-content: center;
-   */  height: 3vw;
+  height: 3vw;
   width: 3vw;
   border: 1px solid grey;
   background-color: #cfcfcf;
@@ -41,6 +42,37 @@
   padding: 0.15vw;
   text-align: center;
   }
+
+.tile:nth-of-type(3n) {
+  border-right: 2px solid black;
+ }
+.tile:nth-of-type(27n+19) {
+  border-bottom: 2px solid black;
+}
+.tile:nth-of-type(27n+20) {
+  border-bottom: 2px solid black;
+}
+.tile:nth-of-type(27n+21) {
+  border-bottom: 2px solid black;
+}
+.tile:nth-of-type(27n+22) {
+  border-bottom: 2px solid black;
+}
+.tile:nth-of-type(27n+23) {
+  border-bottom: 2px solid black;
+}
+.tile:nth-of-type(27n+24) {
+  border-bottom: 2px solid black;
+}
+.tile:nth-of-type(27n+25) {
+  border-bottom: 2px solid black;
+}
+.tile:nth-of-type(27n+26) {
+  border-bottom: 2px solid black;
+}.tile:nth-of-type(27n+27) {
+  border-bottom: 2px solid black;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
      -webkit-appearance: none;
@@ -52,11 +84,9 @@ input:disabled {
   color: red;
 }
 input:active {
-  background-color: yellow;
-}
-
-.red {
-  color: red;
+  background-color: #cfcfcf;
+  color: green;
+  font-size: 1.5vw;
 }
 
 @keyframes App-logo-spin {

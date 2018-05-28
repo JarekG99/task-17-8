@@ -5,16 +5,29 @@ import { ActionCreators as UndoActionCreators } from 'redux-undo';
 
 import  './footer.css';
 
+const styles = {
+  green: {
+    color: 'green',
+    fontSize: '1.5vw',
+    borderRadius: '100px'
+  },
+  blue: {
+    color: 'blue',
+    fontSize: '1.5vw',
+    borderRadius: '10px'
+  },
+};
 
 const Footer = ({props, onShow_Candidates, canUndo, canRedo,
   onUndo, onRedo,  })  => {
 
+
     return (
       <footer className='App-footer'>
         <div className='footer-top'>
-        <button className='btn' onClick={onUndo} disabled={!canUndo}>Undo</button>
-        <button className='btn' onClick={onShow_Candidates}>Show candidates</button>
-        <button className='btn' onClick={onRedo} disabled={!canRedo}>Redo</button>
+        <button className='btn' style={styles.blue} onClick={onUndo} disabled={!canUndo}>Undo</button>
+        <button className='btn' style={styles.green} onClick={onShow_Candidates}>Show candidates</button>
+        <button className='btn' style={styles.blue} onClick={onRedo} disabled={!canRedo}>Redo</button>
         </div>
         {/* <div className='footer-bottom'>
         <button className='btn number' onClick={props.on1}>1</button>

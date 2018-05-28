@@ -22,7 +22,7 @@ this.handleChange = (event) => {
       id = {uuid()}
       value={number}
       disabled={locked ? 'disabled' : ''}
-
+      
     />
   );
 
