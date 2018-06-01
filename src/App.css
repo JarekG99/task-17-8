@@ -83,12 +83,11 @@ input[type=number]::-webkit-outer-spin-button {
 input:disabled {
   color: red;
 }
-input:active {
+input:highlighted {
   background-color: #cfcfcf;
   color: green;
   font-size: 1.5vw;
 }
-
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

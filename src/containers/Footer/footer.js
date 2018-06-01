@@ -18,15 +18,20 @@ const styles = {
   },
 };
 
-const Footer = ({props, onShow_Candidates, canUndo, canRedo,
+const Footer = ({props, onShow_Candidates, canUndo, canRedo, highlighted,
   onUndo, onRedo,  })  => {
 
+
+    // onShow_Candidates=() => {
+    //   this.setState({highlighted: !this.state.highlighted})
+    // }
 
     return (
       <footer className='App-footer'>
         <div className='footer-top'>
         <button className='btn' style={styles.blue} onClick={onUndo} disabled={!canUndo}>Undo</button>
-        <button className='btn' style={styles.green} onClick={onShow_Candidates}>Show candidates</button>
+        <button className='btn' style={styles.green}
+           onClick={onShow_Candidates}>Show candidates</button>
         <button className='btn' style={styles.blue} onClick={onRedo} disabled={!canRedo}>Redo</button>
         </div>
         {/* <div className='footer-bottom'>
@@ -67,7 +72,8 @@ const mapStateToProps = (state) => {
   return {
   state,
   canUndo: state.BoardReducer.past.length > 0,
-  canRedo: state.BoardReducer.future.length > 0
+  canRedo: state.BoardReducer.future.length > 0,
+  
 }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);

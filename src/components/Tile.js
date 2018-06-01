@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import uuid from 'uuid';
-import  '../App.css';
+import '../App.css';
 import { nextStep, checkGame } from '../actions';
 
 
-const Tile = ({onChange, number, id, locked, onfinishEdit, onhandleChange}) => {
+const Tile = ({onChange, number, id, highlighted, locked, onfinishEdit, onhandleChange}) => {
+
 
 
 this.handleChange = (event) => {
@@ -17,12 +18,12 @@ this.handleChange = (event) => {
  return (
     <input
       onChange={this.handleChange}
-      className={'tile' + (locked ? ' disabled' : '')}
+      className={'tile' + (locked ? '  disabled' : '') +(highlighted ? ' highlighted' : '')}
       type='number'
       id = {uuid()}
       value={number}
       disabled={locked ? 'disabled' : ''}
-      
+
     />
   );
 

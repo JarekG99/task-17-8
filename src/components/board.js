@@ -16,8 +16,7 @@
     }
 // console.log('board Arr', board);
 
-
-     return (
+    return (
        <div className='board'>{board.map((number, index) =>
          <Tile
            className='tile'

@@ -10,9 +10,9 @@ export class ShowBoardPage extends React.Component {
     this.state = {
       initialBoard: '',
       board: [],
-      active: false,
+      highlighted: false,
     };
-    
+
 
  store.subscribe(() => {
    this.setState({
@@ -22,15 +22,17 @@ export class ShowBoardPage extends React.Component {
 
 console.log(store.getState())
 }
+
   handleClick = (event) => {
     const  id  = event.target.id;
-    };
+    }
 
   checkEnter = (e) => {
     if (e.key === 'Enter') {
       this.finishEdit(e);
     }
   }
+
 
   // finishEdit = (e) => {
   //   let value = e.target.value;
