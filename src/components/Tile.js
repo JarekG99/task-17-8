@@ -6,7 +6,7 @@ import '../App.css';
 import { nextStep, checkGame } from '../actions';
 
 
-const Tile = ({onChange, number, id, highlighted, locked, onfinishEdit, onhandleChange}) => {
+const Tile = ({onChange, number, id, locked, onfinishEdit, onhandleChange, showCandidates}) => {
 
 
 
@@ -18,7 +18,7 @@ this.handleChange = (event) => {
  return (
     <input
       onChange={this.handleChange}
-      className={'tile' + (locked ? '  disabled' : '') +(highlighted ? ' highlighted' : '')}
+      className={'tile' + (locked ? '  disabled' : (showCandidates ? ' show-candidates' : ''))}
       type='number'
       id = {uuid()}
       value={number}

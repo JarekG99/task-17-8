@@ -42,6 +42,9 @@
   padding: 0.15vw;
   text-align: center;
   }
+  .tile:nth-child(-n+9) {
+    border-top: 2px solid black;
+   }
 
 .tile:nth-of-type(3n) {
   border-right: 2px solid black;
@@ -83,10 +86,10 @@ input[type=number]::-webkit-outer-spin-button {
 input:disabled {
   color: red;
 }
-input:highlighted {
+input.show-candidates {
   background-color: #cfcfcf;
   color: green;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

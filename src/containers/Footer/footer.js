@@ -21,11 +21,6 @@ const styles = {
 const Footer = ({props, onShow_Candidates, canUndo, canRedo, highlighted,
   onUndo, onRedo,  })  => {
 
-
-    // onShow_Candidates=() => {
-    //   this.setState({highlighted: !this.state.highlighted})
-    // }
-
     return (
       <footer className='App-footer'>
         <div className='footer-top'>
@@ -73,7 +68,7 @@ const mapStateToProps = (state) => {
   state,
   canUndo: state.BoardReducer.past.length > 0,
   canRedo: state.BoardReducer.future.length > 0,
-  
+
 }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);

@@ -16,6 +16,8 @@
     }
 // console.log('board Arr', board);
 
+  var showCandidates = store.getState().BoardReducer.present.showCandidates;
+
     return (
        <div className='board'>{board.map((number, index) =>
          <Tile
@@ -26,6 +28,7 @@
            value={props.handleValue}
            onKeyPress={this.checkEnter}
            locked={store.getState().BoardReducer.present.initialBoard[index] !== '.'}
+           showCandidates={showCandidates[index] || false}
            id={index}
          />
        )}

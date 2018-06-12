@@ -10,7 +10,7 @@ export class ShowBoardPage extends React.Component {
     this.state = {
       initialBoard: '',
       board: [],
-      highlighted: false,
+      // highlighted: false,
     };
 
 

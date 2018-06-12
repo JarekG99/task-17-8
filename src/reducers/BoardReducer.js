@@ -7,6 +7,7 @@ import undoable, { distinctState } from 'redux-undo';
 const initialState = {
  initialBoard: '',
  board: [],
+ showCandidates: [],
 }
 
 const replaceAt = (state, index, value) => { console.log('index, value', index, value);
@@ -26,12 +27,19 @@ const BoardReducer = (state=initialState, action) => { console.log('action', act
       return Object.assign({}, state, {board: state.initialBoard.split('')});
 
     case NEXT_STEP:
+          state.showCandidates[action.key] = false;
           return Object.assign({}, state, {board: replaceAt(state, action.key, action.value)});
 
     case SHOW_CANDIDATES:
+          state.board = state.board.map((item, index) => state.showCandidates[index] ? '' : item);
           const candidatesTile = sudoku.get_candidates(state.board).toString().split(',');
-          // console.log(candidatesTile);
-          return Object.assign({}, state, {board: candidatesTile});
+          console.log('state.board', state.board);
+          return Object.assign({}, state, {board: candidatesTile, showCandidates: candidatesTile.map((item, index) => state.initialBoard[index] !== '.' ? false : true)});
+
+
+          // const candidatesTile = sudoku.get_candidates(state.board).toString().split(',');
+          // // console.log(candidatesTile);
+          // return Object.assign({}, state, {board: candidatesTile});
 
     case CHECK_GAME: {
         const solutionBoard = sudoku.solve(state.initialBoard).split('');
@@ -52,7 +60,7 @@ const BoardReducer = (state=initialState, action) => { console.log('action', act
 
         // return Object.assign({}, state, {board: replaceAt(state, action.key, action.value)});
           return state;
-          
+
     default:
       return state;
   }
